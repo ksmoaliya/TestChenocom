@@ -30,8 +30,6 @@ class AgendaPostType
             'has_archive'        => true,
             'rewrite'            => ['slug' => 'agenda'],
             'menu_position'      => 5,
-
-            // 🔥 important pour Gutenberg + API
             'publicly_queryable' => true,
             'show_ui'            => true,
         ]);

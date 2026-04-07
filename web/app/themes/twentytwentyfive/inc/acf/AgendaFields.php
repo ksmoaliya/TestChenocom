@@ -65,7 +65,7 @@ class AgendaFields
 
             ->addTrueFalse('featured_post', [
                 'label' => 'Mettre en avant',
-                'ui' => 1, // ✅ switch UI
+                'ui' => 1,
                 'ui_on_text' => 'Oui',
                 'ui_off_text' => 'Non',
                 'default_value' => 0,

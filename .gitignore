@@ -1,0 +1,20 @@
+# Fichiers sensibles
+.env
+.env.*
+
+# Composer
+/vendor/
+
+# WordPress core (géré par composer)
+/web/wp/
+/web/wp-config.php
+
+# Uploads (optionnel selon besoin)
+/web/app/uploads/
+
+# Node
+/node_modules/
+
+# OS
+.DS_Store
+Thumbs.db

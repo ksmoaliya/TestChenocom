@@ -6,7 +6,7 @@ class AgendaPostType
 {
     public static function register()
     {
-        // Labels complets (meilleure UX admin)
+        // Labels CPT
         $labels = [
             'name'               => 'Agenda',
             'singular_name'      => 'Événement',

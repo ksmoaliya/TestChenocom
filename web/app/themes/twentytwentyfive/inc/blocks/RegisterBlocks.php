@@ -1,12 +1,10 @@
 <?php
 
-// Register block + style en une seule fois
+// Register block + style
 add_action('init', function () {
 
     $style_path = get_template_directory() . '/blocks/agenda/style.css';
     $style_uri  = get_template_directory_uri() . '/blocks/agenda/style.css';
-
-    // Register style (front + editor)
     wp_register_style(
         'mytheme-agenda-style',
         $style_uri,
@@ -47,7 +45,6 @@ function mytheme_render_agenda_block($attributes)
 
     ob_start();
 
-    // Variables dispo dans le template
     $data = [
         'number' => $number,
         'title'  => $title,

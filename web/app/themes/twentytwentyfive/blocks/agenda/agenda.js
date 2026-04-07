@@ -10,7 +10,7 @@ registerBlockType('mytheme/agenda', {
     category: 'widgets',
     attributes: {
         number: { type: 'number', default: 5 },
-        title: { type: 'string', default: '' } // ← nouveau champ
+        title: { type: 'string', default: '' }
     },
     edit: function(props) {
         const { attributes, setAttributes } = props;

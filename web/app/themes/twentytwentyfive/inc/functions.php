@@ -32,11 +32,11 @@ function mytheme_enqueue_agenda_block() {
         'mytheme-agenda-block',
         get_template_directory_uri() . '/blocks/agenda/agenda.js',
         array(
-            'wp-blocks',            // registerBlockType
-            'wp-element',           // createElement
-            'wp-block-editor',      // InspectorControls + components modernes
-            'wp-components',        // PanelBody, RangeControl
-            'wp-server-side-render' // indispensable pour render_callback PHP
+            'wp-blocks',
+            'wp-element',
+            'wp-block-editor',
+            'wp-components',
+            'wp-server-side-render'
         ),
         filemtime(get_template_directory() . '/blocks/agenda/agenda.js'),
         true
@@ -46,7 +46,7 @@ function mytheme_enqueue_agenda_block() {
 add_action('enqueue_block_editor_assets', 'mytheme_enqueue_agenda_block');
 
 // ========================
-// Charger les blocs
+// Charger le blocs
 // ========================
 require_once get_template_directory() . '/inc/blocks/RegisterBlocks.php';
 
@@ -55,7 +55,6 @@ require_once get_template_directory() . '/inc/blocks/RegisterBlocks.php';
 // ========================
 if (!function_exists('format_agenda_date')) {
     /**
-     * Formate une date ACF ou string
      *
      * @param string $date Date brute (Y-m-d ou d/m/Y)
      * @param string $format Format PHP/WordPress date_i18n
@@ -65,22 +64,17 @@ if (!function_exists('format_agenda_date')) {
     {
         if (empty($date)) return '';
 
-        // 1️⃣ ACF date standard (Y-m-d)
         $d = DateTime::createFromFormat('Y-m-d', $date);
 
-        // 2️⃣ Format européen (d/m/Y)
         if (!$d) {
             $d = DateTime::createFromFormat('d/m/Y', $date);
         }
 
-        // 3️⃣ Fallback avec strtotime
         if (!$d) {
             $timestamp = strtotime($date);
             if (!$timestamp) return '';
             return date_i18n($format, $timestamp);
         }
-
-        // Retour final formaté
         return date_i18n($format, $d->getTimestamp());
     }
 }

@@ -24,7 +24,7 @@ class AgendaFields
                 'label' => 'Date début',
                 'required' => 1,
                 'display_format' => 'd/m/Y',
-                'return_format'  => 'Y-m-d', // 🔥 important pour tri
+                'return_format'  => 'Y-m-d',
             ])
 
             ->addDatePicker('date_fin', [

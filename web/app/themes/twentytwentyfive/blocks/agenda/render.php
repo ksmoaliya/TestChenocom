@@ -106,11 +106,9 @@ $events = [];
                         </div>
 
                         <div class="featured-image-wrapper">
-                            <div>
                             <?php if (!empty($featured_post['image'])) : ?>
                                 <img src="<?php echo esc_url($featured_post['image']['url']); ?>" alt="" loading="lazy">
                             <?php endif; ?>
-                            </div>
                         </div>
 
                     </div>
